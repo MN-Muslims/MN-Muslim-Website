@@ -1,4 +1,6 @@
 .contact-page {
+  /* display: flex;
+  justify-content: center; */
     max-width: 500px;
     margin: 0 auto;
   }
@@ -35,8 +37,22 @@
     border-radius: 4px;
     border: 1px solid #ccc;
   }
+  .button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 5%; */
+    margin-bottom: 5%;
+
+  } 
+
+  .button button{
+    background-color: #007bff;
+  }
   
-  .button button {
+  button {
+
     padding: 0.5rem 1rem;
     background-color: #007bff;
     color: #fff;

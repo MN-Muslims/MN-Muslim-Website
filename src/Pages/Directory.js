@@ -64,9 +64,7 @@ function NewPage() {
   };
 
   const handlePostClickMasjid = (masjid) => {
-    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(
-      masjid.Address
-    )}`);
+    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(masjid.Address)}&jumuah=${encodeURIComponent(masjid['JumuahTimings/Language'])}&dailySalat=${encodeURIComponent(masjid['DailySalat(Yes/No)'])}&orgInfo=${encodeURIComponent(masjid.OrganizationInfo)}&notes=${encodeURIComponent(masjid.AdditionalNotes)}&contact=${encodeURIComponent(masjid['ContactInfo/Person'])}`);
   };
 
   return (
@@ -119,7 +117,7 @@ function NewPage() {
                     </p>
                     <p>
                       <strong>links: </strong>
-                      <a href={business.links}>{business.links}</a>
+                      <a href={business.links} target="_blank">{business.links}</a>
                     </p>
                     <p>
                       <strong>email: </strong>
@@ -149,18 +147,20 @@ function NewPage() {
                       <strong>Jumuah Timings/Language: </strong>
                       {masjid['JumuahTimings/Language']}
                     </p>
-                    <p>
+                    {/* <p>
                       <strong>DailySalat(Yes/No): </strong>
                       {masjid['DailySalat(Yes/No)']}
-                    </p>
+                    </p> */}
                     <p>
                       <strong>Organization Info: </strong>
-                      {masjid.OrganizationInfo}
+                      <a href={masjid.OrganizationInfo}  target="_blank">{masjid.OrganizationInfo}</a>
                     </p>
-                    <p>
+                    {/*  target="_blank" */}
+
+                    {/* <p>
                       <strong>Additional Notes: </strong>
                       {masjid.AdditionalNotes}
-                    </p>
+                    </p> */}
                     <p>
                       <strong>Contact Info: </strong>
                       {masjid['ContactInfo/Person']}

@@ -69,7 +69,7 @@ const PublicViewingDetails = ({ business }) => {
         </p>
         <p>
           <strong>links: </strong>
-          <a href={business.links}>{business.links}</a>
+          <a href={business.links} target="_blank">{business.links}</a>
         </p>
         <p>
           <strong>email: </strong>

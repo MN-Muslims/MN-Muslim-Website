@@ -3,6 +3,10 @@ import { UseCarouselContext } from '../hooks/UseCarouselContext';
 import '../styles/business.css';
 import { useNavigate } from 'react-router-dom';
 import CarouselDetails from "./CarouselDetails";
+import ImageUploader1 from '../Pages/ImageUploader1'
+import ImageUploader2 from '../Pages/ImageUploader2'
+import ImageUploader3 from '../Pages/ImageUploader3'
+
 
 const CarouselForm = () => {
     const { dispatch } = UseCarouselContext()
@@ -23,7 +27,7 @@ const CarouselForm = () => {
 
         const carousel = {description1, description2, description3, image1}
 
-        const response = await fetch('http://localhost:4000/api/carousel/', {
+        const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel/', {
             method: 'POST',
             body: JSON.stringify(carousel),
             headers: {
@@ -63,15 +67,6 @@ const CarouselForm = () => {
     value={description1}
     />
 
-    <label>Image1</label>
-    <input
-    type="file"
-    accept="image/*"
-    onChange={(e) => setImage1(e.target.value)}
-    value={image1}
-    />
-
-
     <label>description2</label>
     <input 
     // type="text" 
@@ -89,9 +84,10 @@ const CarouselForm = () => {
     value={description3}
     />
 
-
     <button onSubmit={CarouselDetails}>Add Announcement</button>
     {error && <div className="error">{error}</div>}
+
+
 </form>
 )
 }

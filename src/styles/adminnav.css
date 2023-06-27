@@ -1,0 +1,39 @@
+.admin-navbar-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.admin-navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* height: 100px; */
+
+}
+.admin-navbar-links :hover{
+  color:rgb(29, 75, 116);
+}
+
+.admin-navbar-links li {
+  margin: 0 10px;
+}
+
+.admin-navbar-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+
+  .admin-navbar-links {
+    flex-direction: column;
+  }
+
+  .admin-navbar-links li {
+    margin: 5px 0;
+  }
+}

@@ -21,19 +21,21 @@ const PublicViewingMajids = () => {
     fetchMasjids();
   }, []);
 
-  const handlePostClickMasjid = (masjid) => {
-    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(masjid.Address)}&address=${encodeURIComponent(masjid.Address)}`);
+  const handleCardClick = (masjid) => {
+    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(masjid.Address)}&jumuah=${encodeURIComponent(masjid['JumuahTimings/Language'])}&dailySalat=${encodeURIComponent(masjid['DailySalat(Yes/No)'])}&orgInfo=${encodeURIComponent(masjid.OrganizationInfo)}&notes=${encodeURIComponent(masjid.AdditionalNotes)}&contact=${encodeURIComponent(masjid['ContactInfo/Person'])}`);
   };
 
   return (
     <div>
-      {loading ? ( // Render loading text if loading is true
+      {loading ? (
         <p>Loading...</p>
       ) : (
         masjids.map((masjid) => (
           <div key={masjid._id} className="workout-details">
-            <a href="#" onClick={() => handlePostClickMasjid(masjid)}>
-              <h4>{masjid.Name}</h4>
+            <a href="#" onClick={() => handleCardClick(masjid)}>
+              <h4>
+                {masjid.Name}
+              </h4>
             </a>
             <p>
               <strong>Address: </strong>
@@ -43,22 +45,18 @@ const PublicViewingMajids = () => {
               <strong>Jumuah Timings/Language: </strong>
               {masjid['JumuahTimings/Language']}
             </p>
-            <p>
-              <strong>Address: </strong>
-              {masjid.Address}
-            </p>
-            <p>
+            {/* <p>
               <strong>DailySalat(Yes/No): </strong>
               {masjid['DailySalat(Yes/No)']}
-            </p>
+            </p> */}
             <p>
               <strong>Organization Info: </strong>
-              {masjid.OrganizationInfo}
+              <a href={masjid.OrganizationInfo}  target="_blank">{masjid.OrganizationInfo}</a>
             </p>
-            <p>
+            {/* <p>
               <strong>Additional Notes: </strong>
               {masjid.AdditionalNotes}
-            </p>
+            </p> */}
             <p>
               <strong>Contact Info: </strong>
               {masjid['ContactInfo/Person']}

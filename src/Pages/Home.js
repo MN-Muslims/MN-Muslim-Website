@@ -38,17 +38,48 @@ const PrevArrow = (props) => {
 const Home = () => {
   let navigate = useNavigate();
   const [carouselData, setCarouselData] = useState([]);
+  const [imageData, setImageData] = useState([]);
+  const [imageData2, setImageData2] = useState([]);
+  const [imageData3, setImageData3] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('http://localhost:4000/api/carousel/')
+    fetch('https://mnmuslims-api.onrender.com/api/carousel/')
       .then((response) => response.json())
       .then((data) => {
         setCarouselData(data);
         setIsLoading(false); // Set loading state to false after data is fetched
       })
       .catch((error) => console.error(error));
+
+
+      fetch('https://mnmuslims-api.onrender.com/uploads/')
+      .then((response) => response.json())
+      .then((image) => {
+        setImageData(image);
+        setIsLoading(false); // Set loading state to false after data is fetched
+      })
+      .catch((error) => console.error(error));
+
+      fetch('https://mnmuslims-api.onrender.com/uploads2/')
+      .then((response) => response.json())
+      .then((image) => {
+        setImageData2(image);
+        setIsLoading(false); // Set loading state to false after data is fetched
+      })
+      .catch((error) => console.error(error));
+
+      fetch('https://mnmuslims-api.onrender.com/uploads3/')
+      .then((response) => response.json())
+      .then((image) => {
+        setImageData3(image);
+        setIsLoading(false); // Set loading state to false after data is fetched
+      })
+      .catch((error) => console.error(error));
+
+
   }, []);
 
   const settings = {
@@ -83,37 +114,62 @@ const Home = () => {
         ) : (
           <Slider {...settings}>
             <div className='sentence'>
+
+            {imageData.map((slide, index) => (
+                <div key={index} className='sentence'>
+            <img src={slide.imageUrl} alt="Uploaded" style={{ width: 200, height: 200 }} />
+            {/* <img src={require('/images/image-name.png')} */}
+                </div>
+                  ))}
+
+
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
-                  <p>{slide.description1}</p>
+                  <strong>{slide.description1}</strong>
                 </div>
               ))}
             </div>
             <div className='sentence'>
+
+            {imageData2.map((slide, index) => (
+                <div key={index} className='sentence'>
+            <img src={slide.imageUrl2} alt="Uploaded" style={{ width: 200, height: 200 }} />
+                </div>
+                  ))}
+
+
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
-                  <p>{slide.description2}</p>
+                  <strong>{slide.description2}</strong>
                 </div>
               ))}
             </div>
             <div className='sentence'>
+
+            {imageData3.map((slide, index) => (
+                <div key={index} className='sentence'>
+            <img src={slide.imageUrl3} alt="Uploaded" style={{ width: 200, height: 200 }} />
+                  {/* {slide.image1 && <img src={slide.image1} />} */}
+                </div>
+                  ))}
+
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
-                  <p>{slide.description3}</p>
+                  <strong>{slide.description3}</strong>
                 </div>
               ))}
             </div>
-          </Slider>
+          </Slider >
         )}
       </div>
 
       
-      <h3>About Us</h3>
+      <h2>About Us</h2>
       <p className='line'>Suhbah Collective’s goal is to promote the social, financial, and personal growth of its members and members of their community.</p>
       <div className='about-button'>
         <button onClick={() => navigate("/about")}>About</button>
       </div>
-      <h3>Join Today</h3>
+      <h2>Join Today</h2>
       <p className='line'>Want to be part of this effort to create an online hub for the community? Then join us now.</p>
       <div className='join-button'>
         <button onClick={() => navigate("/contact")}>Join</button>

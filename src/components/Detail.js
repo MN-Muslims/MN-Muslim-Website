@@ -44,7 +44,7 @@ function Detail() {
       </p>
       <p>
         <strong>Links: </strong>
-        <a href={links}>{links}</a>
+        <a href={links} target="_blank">{links}</a>
         {/* {links} */}
       </p>
       <p>

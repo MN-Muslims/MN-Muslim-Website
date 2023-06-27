@@ -17,6 +17,8 @@ const Nav = () => {
         <li><a href="/about">About</a></li>
         <li><a href="/directory">Directory</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/login">Admin</a></li>
+
 
       </ul>
     </nav>

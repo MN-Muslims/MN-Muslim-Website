@@ -14,11 +14,10 @@ const CarouselDetails = ({ carousel }) => {
     setUpdatedDescription1(carousel.description1);
     setUpdatedDescription2(carousel.description2);
     setUpdatedDescription3(carousel.description3);
-    setUpdatedImage1(carousel.image1);
   }, [carousel]);
 
   const handleUpdate = async () => {
-    const response = await fetch('http://localhost:4000/api/carousel/' + carousel._id, {
+    const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel/' + carousel._id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -27,7 +26,6 @@ const CarouselDetails = ({ carousel }) => {
         description1: updatedDescription1,
         description2: updatedDescription2,
         description3: updatedDescription3,
-        image1: updatedImage1
       }),
     });
     const json = await response.json();
@@ -39,7 +37,7 @@ const CarouselDetails = ({ carousel }) => {
   };
 
   const handleClick = async () => {
-    const response = await fetch('http://localhost:4000/api/carousel/' + carousel._id, {
+    const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel/' + carousel._id, {
       method: 'DELETE'
     });
     const json = await response.json();
@@ -58,10 +56,6 @@ const CarouselDetails = ({ carousel }) => {
         <strong>description1: </strong>
         {carousel.description1}
       </p>
-      <p>
-        <strong>image1: </strong>
-        {carousel.image1}
-      </p>
 
       <p>
         <strong>description2: </strong>
@@ -78,12 +72,6 @@ const CarouselDetails = ({ carousel }) => {
         onChange={(e) => setUpdatedDescription1(e.target.value)}
       />
       
-      <input
-        type="text"
-        value={updatedImage1}
-        onChange={(e) => setUpdatedImage1(e.target.value)}
-      />
-
       <input
         type="text"
         value={updatedDescription2}

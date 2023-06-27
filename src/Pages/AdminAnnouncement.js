@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { UseCarouselContext } from '../hooks/UseCarouselContext';
 import CarouselDetails from '../components/CarouselDetails';
 import CarouselForm from '../components/CarouselForm';
+import AdminNav from '../components/AdminNav';
 import '../styles/admin.css';
 import Nav from '../components/Nav';
 
@@ -29,6 +30,8 @@ const AdminAnnouncements = () => {
   return (
     <div>
       <h2>Announcement</h2>
+      <AdminNav/>
+
       <div className="workout-details">
         {isLoading ? (
           <p>Loading...</p>

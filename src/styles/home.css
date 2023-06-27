@@ -1,16 +1,5 @@
-/* .title{
-    display: flex;
-    justify-content: center;
-}
-.sub-title{
-    display: flex;
-    justify-content: center;
 
-}
-.small-title{
-    display: flex;
-    justify-content: center;
-} */
+
 .sub-title{
   display: flex;
   justify-content: center;
@@ -70,16 +59,47 @@
     width: 100%; /* Adjust the width as desired */
   }
         
-  .next {
+  /* .next {
     right: 20px;
   }
   
   .prev {
     left: 20px;
+  } */
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+    z-index: 1;
   }
+  
+  .prev {
+    left: 20px;
+  }
+  
+  .next {
+    right: 20px;
+  }
+  
+
   .carousel-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    /* text-align: center; */
+
+
     position: relative;
-    height: 100px;
+    height: 250px;
     width: 100%; 
     background-color: #6097b3;
     background-size: cover;

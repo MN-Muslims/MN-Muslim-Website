@@ -33,31 +33,31 @@ const BusinessDetails = ({ business }) => {
         <strong>description: </strong>
         {business.description}
       </p>
-      <p>
+      {/* <p>
         <strong>address: </strong>
         {business.address}
-      </p>
-      <p>
+      </p> */}
+      {/* <p>
         <strong>phone number: </strong>
         {business.number}
-      </p>
+      </p> */}
       <p>
         <strong>services: </strong>
         {business.services}
       </p>
       <p>
         <strong>links: </strong>
-        <a href={business.links}>{business.links}</a>
+        <a href={business.links} target="_blank">{business.links}</a>
       </p>
       <p>
         <strong>email: </strong>
         {business.email}
       </p>
 
-      <p>
+      {/* <p>
         <strong>working hours: </strong>
         {business.workingHours}
-      </p>
+      </p> */}
       <p>{business.createdAt}</p>
 
       <span onClick={handleClick}>delete</span>
