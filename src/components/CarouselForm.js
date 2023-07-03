@@ -3,9 +3,6 @@ import { UseCarouselContext } from '../hooks/UseCarouselContext';
 import '../styles/business.css';
 import { useNavigate } from 'react-router-dom';
 import CarouselDetails from "./CarouselDetails";
-import ImageUploader1 from '../Pages/ImageUploader1'
-import ImageUploader2 from '../Pages/ImageUploader2'
-import ImageUploader3 from '../Pages/ImageUploader3'
 
 
 const CarouselForm = () => {
@@ -15,8 +12,6 @@ const CarouselForm = () => {
     const [description2, setDescription2] = useState('')
     const [description3, setDescription3] = useState('')
 
-    const [image1, setImage1] = useState('')
-
 
     const [error, setError] = useState(null)
 
@@ -25,7 +20,7 @@ const CarouselForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const carousel = {description1, description2, description3, image1}
+        const carousel = {description1, description2, description3}
 
         const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel/', {
             method: 'POST',
@@ -43,14 +38,10 @@ const CarouselForm = () => {
             setDescription1('')
             setDescription2('')
             setDescription3('')
-            setImage1('')
 
             setError(null)
             console.log('new annoucement added', json)
             dispatch({type:'CREATE_CAROUSEL_DATA', payload: json})
-
-            // navigate("/findBusiness")
-            // /AdminAnnouncement
         }
     }
 
@@ -61,7 +52,6 @@ const CarouselForm = () => {
 
     <label>description1</label>
     <input 
-    // type="text" 
     onChange={(e) => 
     setDescription1(e.target.value)}
     value={description1}
@@ -69,7 +59,6 @@ const CarouselForm = () => {
 
     <label>description2</label>
     <input 
-    // type="text" 
     onChange={(e) => 
     setDescription2(e.target.value)}
     value={description2}
@@ -78,7 +67,6 @@ const CarouselForm = () => {
 
     <label>description3</label>
     <input 
-    // type="text" 
     onChange={(e) => 
     setDescription3(e.target.value)}
     value={description3}

@@ -5,7 +5,6 @@ import CarouselDetails from '../components/CarouselDetails';
 import CarouselForm from '../components/CarouselForm';
 import AdminNav from '../components/AdminNav';
 import '../styles/admin.css';
-import Nav from '../components/Nav';
 
 const AdminAnnouncements = () => {
   const { carousel, dispatch } = UseCarouselContext();
@@ -21,7 +20,7 @@ const AdminAnnouncements = () => {
         dispatch({ type: 'SET_CAROUSEL', payload: json });
       }
 
-      setIsLoading(false); // Set loading state to false after data is fetched
+      setIsLoading(false);
     };
 
     fetchCarouselData();
@@ -32,13 +31,13 @@ const AdminAnnouncements = () => {
       <h2>Announcement</h2>
       <AdminNav/>
 
-      <div className="workout-details">
+      <div className="page-details">
         {isLoading ? (
           <p>Loading...</p>
         ) : (
           <>
             <div className='home'>
-              <div className='workouts'>
+              <div className='page-container'>
                 {carousel &&
                   carousel.map((carousel) => (
                     <CarouselDetails key={carousel._id} carousel={carousel} />

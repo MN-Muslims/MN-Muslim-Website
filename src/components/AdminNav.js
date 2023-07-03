@@ -10,6 +10,8 @@ function AdminNav() {
         <li><a href="/AdminAnnouncement">Create Announcement</a></li>
         <li><a href="/imagepage">Upload Image</a></li>
         <li><a href="/register">Register</a></li>
+        <li><a href="/accounts">Accounts</a></li>
+
       </ul>
     </div>
   )

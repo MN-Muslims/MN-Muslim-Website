@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
-import PublicViewingDetails from './PublicViewingDetails';
+import { useNavigate } from 'react-router-dom';
 import '../styles/admin.css';
 
 const MasjidSearchFilter = () => {
@@ -8,16 +7,13 @@ const MasjidSearchFilter = () => {
   const [masjids, setMasjids] = useState([]);
   const [filteredMasjids, setFilteredMasjids] = useState([]);
   
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
-  // Fetch data from API and set the initial businesses state
   useEffect(() => {
     fetchData();
   }, []);
 
-  // Fetch data from API
   const fetchData = () => {
-    // Replace 'YOUR_API_ENDPOINT' with the actual endpoint of your API
     fetch('https://mnmuslims-api.onrender.com/api/masjids/')
       .then(response => response.json())
       .then(data => {
@@ -32,7 +28,6 @@ const MasjidSearchFilter = () => {
   };
 
 
-  // Update filteredBusinesses based on the users input
   useEffect(() => {
     const filtered = masjids.filter(business => {
       const Name = business.Name.toLowerCase();
@@ -54,9 +49,9 @@ const MasjidSearchFilter = () => {
       {searchTerm && (
         <ul>
             <div className='home'>
-                <div className='workouts'>
+                <div className='page-container'>
                     {filteredMasjids.map(masjid => (
-                    <div className='workout-details' key={masjid._id}>
+                    <div className='page-details' key={masjid._id}>
           <h4>{masjid.Name}</h4>
           <p>
             <strong>Address: </strong>

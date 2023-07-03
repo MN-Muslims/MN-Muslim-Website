@@ -1,6 +1,4 @@
 .contact-page {
-  /* display: flex;
-  justify-content: center; */
     max-width: 500px;
     margin: 0 auto;
   }
@@ -10,10 +8,10 @@
   
   textarea {
     width: 90%;
-    height: 200px; /* Adjust the height as per your requirements */
+    height: 200px;
     padding: 10px;
     font-size: 16px;
-    resize: vertical; /* Allow vertical resizing of the textarea */
+    resize: vertical;
       border-radius: 10px;
     border: 1px solid #ccc;
 
@@ -42,7 +40,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* padding-top: 5%; */
     margin-bottom: 5%;
 
   } 

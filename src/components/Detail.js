@@ -15,15 +15,11 @@ function Detail() {
   const services = params.get('services');
   const links = params.get('links');
   const workingHours = params.get('workingHours');
-  const createdAt = params.get('createdAt');
 
   return (
     <div className='company-information'>
-      {/* <Nav /> */}
-      {/* <h1>More Information</h1> */}
 
       <h2>
-        {/* <strong>Title: </strong> */}
         {title}
       </h2>
       <p>
@@ -45,7 +41,6 @@ function Detail() {
       <p>
         <strong>Links: </strong>
         <a href={links} target="_blank">{links}</a>
-        {/* {links} */}
       </p>
       <p>
         <strong>Email: </strong>
@@ -56,13 +51,6 @@ function Detail() {
         {workingHours}
       </p>
 
-
-
-      {/* <p>
-        <strong>Email: </strong>
-        {email}
-      </p> */}
-      {/* Render other post details */}
     </div>
   );
 }

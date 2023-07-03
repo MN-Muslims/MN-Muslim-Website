@@ -1,94 +1,79 @@
-.image-container{
+.image-container {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
-.image-container{
+
+.image-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-}
-.text-container{
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-}
-.suhbah-logo{
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: aqua; */
-    height: 200px;
-    width: 300px;
 }
 
-.about-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: aqua; */
-
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
-
-.text-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.suhbah-logo {
+  height: 200px;
+  width: 300px;
 }
 
-.border-container{
-    display: flex;
-    justify-content: center;
-    /* text-align: center; */
-    justify-content: space-evenly;
-    flex-direction: row;
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.border{
-    /* border: 2px solid black;
-    height: 30%;
-    width: 25%; */
-    /* text-align: center; */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    height: 100px;
-    font-family: calibri;
-    font-size: 23px;
-
-    background-color: #03989e;
-    border: 2px solid black;
-    border-radius: 10%;
-    height: 300px;
-    width: 300px;
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.border:hover{
-    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
-    transform: translateY(-5px);
-    /* box-shadow: 0px 10px 20px 5px rgba(26, 20, 20, 0.5) */
-      
+
+.border-container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.border {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: calibri;
+  font-size: 23px;
+  background-color: #03989e;
+  border: 2px solid black;
+  border-radius: 10%;
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+}
+
+.border:hover {
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
 }
 
 @media only screen and (max-width: 768px) {
-    .border-container {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .border {
-      width: 45%;
-    }
+  .border {
+    width: 45%;
   }
-  
-  @media only screen and (max-width: 480px) {
-    .border {
-      width: 90%;
-    }
+}
+
+@media only screen and (max-width: 480px) {
+  .border {
+    width: 90%;
   }
+}

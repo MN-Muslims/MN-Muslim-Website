@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { UseBusinessesContext } from '../hooks/UseBusinessesContext';
 import { useNavigate } from 'react-router-dom';
-// components
-import BusinessDetails from '../components/BusinessDetails'
-import BusinessForm from '../components/BusinessForm.js';
-import Nav from '../components/Nav';
+import '../styles/findbusiness.css';
 import PublicViewingDetails from '../components/PublicViewingDetails';
-// import '../styles/admin.css';
 
 function FindBusiness() {
   const { businesses, dispatch } = UseBusinessesContext();
-  const navigate = useNavigate(); // Initialize the useNavigate hook
-  const [loading, setLoading] = useState(true); // Add loading state
+  const navigate = useNavigate(); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchBusinesses = async () => {
@@ -21,33 +17,21 @@ function FindBusiness() {
       if (response.ok) {
         dispatch({ type: 'SET_BUSINESSES', payload: json });
       }
-      setLoading(false); // Set loading to false when data is fetched
+      setLoading(false); 
     };
 
     fetchBusinesses();
   }, []);
 
-  const handlePostClick = (business) => {
-    navigate(`/detail?title=${encodeURIComponent(business.title)}&description=${encodeURIComponent(
-      business.description,
-    )}&address=${encodeURIComponent(business.address)}&number=${encodeURIComponent(
-      business.number,
-    )}&services=${encodeURIComponent(business.services)}&links=${encodeURIComponent(
-      business.links,
-    )}&workingHours=${encodeURIComponent(business.workingHours)}&createdAt=${encodeURIComponent(
-      business.createdAt,
-    )}`);
-  };
 
   return (
-    <div className='website'>
-      {/* <Nav /> */}
+    <div>
       <h1>Find A Business</h1>
-      {loading ? ( // Display loading text when loading is true
+      {loading ? (
         <div>Loading...</div>
       ) : (
         <div className='home'>
-          <div className='workouts'>
+          <div className='page-container'>
             {businesses &&
               businesses.map((business) => (
                 <PublicViewingDetails key={business._id} business={business} />

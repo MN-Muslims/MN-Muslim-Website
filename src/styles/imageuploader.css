@@ -1,0 +1,11 @@
+.image-position{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+
+.image-delete{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}

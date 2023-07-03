@@ -1,15 +1,11 @@
 import React from 'react'
-import Nav from '../components/Nav.js';
 import '../styles/about.css';
-import Footer from '../components/Footer'
 import Suhbah from '../images/suhbah-collective-logo.png';
-// import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 
 function About() {
   return (
     <div className='website'>
       
-      {/* <Nav /> */}
       <div className="image-container">
         <img src={Suhbah} className="suhbah-logo" alt="logo" />
       </div>
@@ -23,7 +19,6 @@ function About() {
         <div className='border'>
           <div className='text-container'>
             <h3>Fellowship</h3>
-            {/* <LocalAtmIcon/> */}
             <strong>To promote a sense of community amongst members of the Islamic faith and their affiliates within the state of Minnesota: instilling a sense of pride for their faith. </strong>
             </div>
 

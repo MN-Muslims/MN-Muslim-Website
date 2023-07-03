@@ -2,13 +2,10 @@ import React from 'react'
 import { useEffect } from 'react';
 import { UseBusinessesContext } from '../hooks/UseBusinessesContext';
 import { useNavigate } from 'react-router-dom';
-import AdminAnnouncement from './AdminAnnouncement';
-// components
 import BusinessDetails from '../components/BusinessDetails'
-import BusinessForm from '../components/BusinessForm.js';
 import AdminNav from '../components/AdminNav';
 import '../styles/admin.css';
-import Nav from '../components/Nav';
+
 function BusinessAdmin() {
     const {businesses, dispatch} = UseBusinessesContext()
     let navigate = useNavigate();
@@ -27,12 +24,11 @@ function BusinessAdmin() {
 
   return (
     <div>
-        {/* <Nav/> */}
         <h2>Business Admin</h2>
         <AdminNav/>
 
         <div className='home'>
-            <div className='workouts'>
+            <div className='page-container'>
                 {businesses && businesses.map((business) => (
                     <BusinessDetails key={business._id} business={business}/>
                 ))}

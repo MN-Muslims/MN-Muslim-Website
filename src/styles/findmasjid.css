@@ -9,48 +9,42 @@ body {
     background-color: rgb(179, 223, 223);
   }
   
-header .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 a {
   text-decoration: none;
 }
 
 
-.masjid-details {
+.masjids-details {
   background: #fff;
   border-radius: 4px;
   margin: 20px 0;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  margin-left: 5%;
   width: 65%; 
+
 }
 
-.masjid-details a :hover{
+.masjids-details a :hover{
     color:rgb(36, 85, 158);
 }
   
 
-.masjid-details h4 {
+.masjids-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
 
-.masjid-details p {
+.masjids-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
 
-.masjid-details span {
+.masjids-details span {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -65,19 +59,12 @@ body {
     background-color: rgb(179, 223, 223);
   }
   
-  .url-links {
-    overflow: hidden; 
+  .urls-links {
+    overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap; 
   }
   
-
-.search-field input{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
 
 .links{
     display: flex;
@@ -87,7 +74,7 @@ a {
     text-decoration: none;
   }
 
-  a :hover{
+ a :hover{
     color:rgb(36, 85, 158);
 }
 

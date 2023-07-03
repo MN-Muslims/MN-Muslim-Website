@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import '../styles/contact.css';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer'
 
 const Contact = () => {
   const [email, setEmail] = useState('');
@@ -43,7 +41,6 @@ const Contact = () => {
 
   return (
     <div className='website'>
-      {/* <Nav /> */}
       <div className="contact-page">
       <h1>Contact Us</h1>
       <form className="contact-form" onSubmit={handleSubmit}>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
-import PublicViewingDetails from './PublicViewingDetails';
+import { useNavigate } from 'react-router-dom';
 import '../styles/admin.css';
 
 const SearchBusiness = () => {
@@ -8,16 +7,13 @@ const SearchBusiness = () => {
   const [businesses, setBusinesses] = useState([]);
   const [filteredBusinesses, setFilteredBusinesses] = useState([]);
   
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
-  // Fetch data from API and set the initial businesses state
   useEffect(() => {
     fetchData();
   }, []);
 
-  // Fetch data from API
   const fetchData = () => {
-    // Replace 'YOUR_API_ENDPOINT' with the actual endpoint of your API
     fetch('https://mnmuslims-api.onrender.com/api/businesses/')
       .then(response => response.json())
       .then(data => {
@@ -32,7 +28,6 @@ const SearchBusiness = () => {
   };
 
 
-  // Update filteredBusinesses based on user input
   useEffect(() => {
     const filtered = businesses.filter(business => {
       const title = business.title.toLowerCase();
@@ -54,9 +49,9 @@ const SearchBusiness = () => {
       {searchTerm && (
         <ul>
             <div className='home'>
-                <div className='workouts'>
+                <div className='page-container'>
                     {filteredBusinesses.map(business => (
-                    <div className='workout-details' key={business._id}>
+                    <div className='page-details' key={business._id}>
                                 <h4>{business.title}</h4>
         <p>
           <strong>description: </strong>

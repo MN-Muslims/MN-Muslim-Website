@@ -4,18 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 import '../styles/home.css';
-
 import { useNavigate } from 'react-router-dom';
-import { UseCarouselContext } from '../hooks/UseCarouselContext';
-
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
-import Background from '../images/background.jpg';
-import Nav from '../components/Nav.js';
-import Footer from '../components/Footer';
 
 const NextArrow = (props) => {
   const { onClick } = props;
@@ -45,12 +35,11 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch data from the API
     fetch('https://mnmuslims-api.onrender.com/api/carousel/')
       .then((response) => response.json())
       .then((data) => {
         setCarouselData(data);
-        setIsLoading(false); // Set loading state to false after data is fetched
+        setIsLoading(false);
       })
       .catch((error) => console.error(error));
 
@@ -59,7 +48,7 @@ const Home = () => {
       .then((response) => response.json())
       .then((image) => {
         setImageData(image);
-        setIsLoading(false); // Set loading state to false after data is fetched
+        setIsLoading(false);
       })
       .catch((error) => console.error(error));
 
@@ -67,7 +56,7 @@ const Home = () => {
       .then((response) => response.json())
       .then((image) => {
         setImageData2(image);
-        setIsLoading(false); // Set loading state to false after data is fetched
+        setIsLoading(false);
       })
       .catch((error) => console.error(error));
 
@@ -75,7 +64,7 @@ const Home = () => {
       .then((response) => response.json())
       .then((image) => {
         setImageData3(image);
-        setIsLoading(false); // Set loading state to false after data is fetched
+        setIsLoading(false);
       })
       .catch((error) => console.error(error));
 
@@ -94,10 +83,6 @@ const Home = () => {
 
   return (
     <div className='website'>
-      {/* <Nav /> */}
-      {/* <div className='title'>
-        <h1>Home</h1>
-      </div> */}
       
       <div className='sub-title'>
         <h2>Suhbah Collective Presents: MN Muslims</h2>
@@ -105,8 +90,6 @@ const Home = () => {
       <div className='small-title'>
         <h3>Your digital source for Minnesota Ummah</h3>
       </div>
-
-      {/* <h2>Announcements</h2> */}
 
       <div className="carousel-container">
         {isLoading ? (
@@ -118,7 +101,6 @@ const Home = () => {
             {imageData.map((slide, index) => (
                 <div key={index} className='sentence'>
             <img src={slide.imageUrl} alt="Uploaded" style={{ width: 200, height: 200 }} />
-            {/* <img src={require('/images/image-name.png')} */}
                 </div>
                   ))}
 
@@ -149,7 +131,6 @@ const Home = () => {
             {imageData3.map((slide, index) => (
                 <div key={index} className='sentence'>
             <img src={slide.imageUrl3} alt="Uploaded" style={{ width: 200, height: 200 }} />
-                  {/* {slide.image1 && <img src={slide.image1} />} */}
                 </div>
                   ))}
 

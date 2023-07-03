@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { UseBusinessesContext } from '../hooks/UseBusinessesContext';
-import BusinessPage from '../Pages/findBusiness';
 import { useNavigate } from 'react-router-dom';
 
 const BusinessDetails = ({ business }) => {
@@ -24,7 +23,7 @@ const BusinessDetails = ({ business }) => {
   };
 
   return (
-    <div className="workout-details">
+    <div className="page-details">
 
 <a href="#" onClick={() => handlePostClick(business)}>
                   <h4>{business.title}</h4>
@@ -33,14 +32,6 @@ const BusinessDetails = ({ business }) => {
         <strong>description: </strong>
         {business.description}
       </p>
-      {/* <p>
-        <strong>address: </strong>
-        {business.address}
-      </p> */}
-      {/* <p>
-        <strong>phone number: </strong>
-        {business.number}
-      </p> */}
       <p>
         <strong>services: </strong>
         {business.services}
@@ -53,16 +44,9 @@ const BusinessDetails = ({ business }) => {
         <strong>email: </strong>
         {business.email}
       </p>
-
-      {/* <p>
-        <strong>working hours: </strong>
-        {business.workingHours}
-      </p> */}
       <p>{business.createdAt}</p>
 
       <span onClick={handleClick}>delete</span>
-
-      {/* <button onClick={handlePostClick}>Info</button> */}
       
 
     </div>

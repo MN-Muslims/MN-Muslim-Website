@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { UseCarouselContext } from '../hooks/UseCarouselContext';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { useNavigate } from 'react-router-dom';
 
 const CarouselDetails = ({ carousel }) => {
   const { dispatch } = UseCarouselContext();
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
   const [updatedDescription1, setUpdatedDescription1] = useState('');
   const [updatedDescription2, setUpdatedDescription2] = useState('');
   const [updatedDescription3, setUpdatedDescription3] = useState('');
-  const [updatedImage1, setUpdatedImage1] = useState('');
 
   useEffect(() => {
     setUpdatedDescription1(carousel.description1);
@@ -50,7 +49,7 @@ const CarouselDetails = ({ carousel }) => {
   
 
   return (
-    <div className="workout-details">
+    <div className="page-details">
 
       <p>
         <strong>description1: </strong>
@@ -88,8 +87,6 @@ const CarouselDetails = ({ carousel }) => {
       <span onClick={handleClick}>delete</span>
 
       
-      {/* <button onClick={POST}>post</button> */}
-
     </div>
   );
 };

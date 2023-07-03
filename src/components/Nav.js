@@ -1,8 +1,6 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
 import '../styles/nav.css';
 import Mnmuslims from '../images/minnesota-muslims-logo.jpg';
-import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (

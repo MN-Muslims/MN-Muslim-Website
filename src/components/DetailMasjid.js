@@ -33,7 +33,6 @@ const DetailMasjid = () => {
         <strong>Organization Info: </strong>
         <a href={orgInfo} target="_blank">{orgInfo}</a>
       </p>
-      {/*  target="_blank" */}
       <p>
         <strong>Additional Notes: </strong>
         {notes}

@@ -1,0 +1,11 @@
+.login-details{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+
+.login-button{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}

@@ -5,12 +5,12 @@
   margin: 0;
   padding: 0;
 }
+
 .admin-navbar-links {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  /* height: 100px; */
 
 }
 .admin-navbar-links :hover{

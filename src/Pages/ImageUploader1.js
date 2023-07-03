@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { UseImageContext } from '../hooks/UseImageContext';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { useNavigate } from 'react-router-dom';
+import '../styles/imageuploader.css';
 
 const ImageUploader1 = ({ image }) => {
   const [file, setFile] = useState(null);
@@ -9,10 +10,9 @@ const ImageUploader1 = ({ image }) => {
   const { dispatch } = UseImageContext();
   const [deletedImageId, setDeletedImageId] = useState(null);
 
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch all images from the server
     const fetchImages = async () => {
       try {
         const response = await axios.get('https://mnmuslims-api.onrender.com/uploads');
@@ -23,13 +23,13 @@ const ImageUploader1 = ({ image }) => {
     };
   
     fetchImages();
-  }, [image, deletedImageId]); // Include deletedImageId in the dependency array
+  }, [image, deletedImageId]);
   
   const handleClick = async (image) => {
     try {
       await axios.delete(`https://mnmuslims-api.onrender.com/uploads/${image._id}`);
       dispatch({ type: 'DELETE_Image_Context', payload: image._id });
-      setDeletedImageId(image._id); // Update the deletedImageId state
+      setDeletedImageId(image._id);
     } catch (error) {
       console.error(error);
     }
@@ -45,7 +45,6 @@ const ImageUploader1 = ({ image }) => {
 
     const formData = new FormData();
     formData.append('image', file);
-// imagetwo
 
     try {
       const response = await axios.post('https://mnmuslims-api.onrender.com/uploads', formData, {
@@ -56,7 +55,6 @@ const ImageUploader1 = ({ image }) => {
 
       alert('Image uploaded successfully!');
       setFile(null);
-      // Fetch all images again to update the list
       const imagesResponse = await axios.get('https://mnmuslims-api.onrender.com/uploads');
       setImages(imagesResponse.data);
     } catch (error) {
@@ -75,15 +73,18 @@ const ImageUploader1 = ({ image }) => {
           <input type="file" accept="image/*" onChange={handleFileChange} />
         )}
       </div>
+      
       {file && <button onClick={handleUpload}>Upload</button>}
       <h2>Uploaded Images for description1</h2>
-      <div style={{ display: 'flex' }}>
+      <div className="image-position" style={{ display: 'flex' }}>
         {images
-          .filter((image) => image._id !== deletedImageId) // Exclude the deleted image
+          .filter((image) => image._id !== deletedImageId)
           .map((image) => (
             <div key={image._id} style={{ margin: 10 }}>
               <img src={image.imageUrl} alt="Uploaded" style={{ width: 200, height: 200 }} />
-              <button onClick={() => handleClick(image)}>delete</button>
+              <div className='image-delete'>
+                <button onClick={() => handleClick(image)}>delete</button>
+              </div>
             </div>
           ))}
       </div>

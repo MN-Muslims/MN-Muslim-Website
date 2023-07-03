@@ -13,8 +13,6 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        {/* <p>&copy; 2023 Your Website. All rights reserved.</p> */}
-
         <footer>
           <p>&copy; {currentYear} mnmuslims all rights reserved</p>
         </footer>

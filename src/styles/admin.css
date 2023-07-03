@@ -1,20 +1,20 @@
-/* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
-
-/* layout */
 :root {
   --primary: #1aac83;
   --error: #e7195a;
 }
+
 body {
   background: #f1f1f1;
   margin: 0;
   font-family: "Poppins";
 }
+
 header {
   background: #fff;
 }
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -23,13 +23,53 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
+
 a {
   text-decoration: none;
 }
 
+.admin-description-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+@media screen and (max-width: 768px) {
+  .admin-description-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .admin-description-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.admin-description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 5%;
+}
 
 
-.workout-details a :hover{
+.page-details a :hover{
   color:rgb(36, 85, 158);
 }
 
@@ -43,26 +83,13 @@ header a {
   margin: 0 auto;
 }
 
-/* homepage */
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
 
-/* .home{
-    display: flex;
-    justify-content: center;
-} */
-
-/* .redirectlink{
-  background-color:blue;
-  cursor:pointer;
-} */
-
-
-
-.workout-details {
+.page-details {
   background: #fff;
   border-radius: 4px;
   margin: 20px auto;
@@ -70,17 +97,17 @@ header a {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
-.workout-details h4 {
+.page-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
-.workout-details p {
+.page-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
-.workout-details span {
+.page-details span {
   position: absolute;
   top: 20px;
   right: 20px;

@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { UseBusinessesContext } from '../hooks/UseBusinessesContext';
 import '../styles/business.css';
-import findBusiness from "../Pages/findBusiness";
 import { useNavigate } from 'react-router-dom';
 import BusinessDetails from "./BusinessDetails";
 
@@ -61,7 +60,6 @@ const BusinessForm = () => {
 
             <label>Name</label>
             <input 
-            // type="text" 
             onChange={(e) => 
             setTitle(e.target.value)}
             value={title}
@@ -69,7 +67,6 @@ const BusinessForm = () => {
 
             <label>description</label>
             <input 
-            // type="text" 
             onChange={(e) => 
             setDescription(e.target.value)}
             value={description}
@@ -78,7 +75,6 @@ const BusinessForm = () => {
 
             <label>address</label>
             <input 
-            // type="text" 
             onChange={(e) => 
             setAddress(e.target.value)}
             value={address}
@@ -86,7 +82,6 @@ const BusinessForm = () => {
 
             <label>number</label>
             <input 
-            // type="text" 
             onChange={(e) => 
             setNumber(e.target.value)}
             value={number}
@@ -94,7 +89,6 @@ const BusinessForm = () => {
 
             <label>services</label>
             <input 
-            // type="text" 
             onChange={(e) => 
             setServices(e.target.value)}
             value={services}
@@ -103,7 +97,6 @@ const BusinessForm = () => {
 
             <label>links</label>
             <input 
-            // type="text" 
             onChange={(e) => 
             setLinks(e.target.value)}
             value={links}
@@ -111,7 +104,6 @@ const BusinessForm = () => {
 
             <label>email</label>
             <input 
-            // type="text" 
             onChange={(e) => 
             setEmail(e.target.value)}
             value={email}
@@ -120,7 +112,6 @@ const BusinessForm = () => {
 
             <label>working hours</label>
             <input 
-            // type="text" 
             onChange={(e) => 
             setWorkingHours(e.target.value)}
             value={workingHours}
