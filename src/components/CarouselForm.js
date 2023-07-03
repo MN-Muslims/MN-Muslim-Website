@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { UseCarouselContext } from '../hooks/UseCarouselContext';
 import '../styles/business.css';
+
 import { useNavigate } from 'react-router-dom';
 import CarouselDetails from "./CarouselDetails";
 
