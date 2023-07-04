@@ -2,18 +2,6 @@ body {
   background-color: rgb(179, 223, 223);
 }
 
-.website{
- /* height: 100%;
-background-position: top;
-background-size: cover;
-background-repeat: no-repeat;
-background-color: rgb(179, 223, 223);
-position: absolute;
-top: 0;
-right: 0;
-left: 0;
-z-index: -1; */
-}
 
 .sub-title{
   display: flex;
@@ -45,10 +33,7 @@ z-index: -1; */
   border-radius: 4px;
   cursor: pointer;
 }
-/* 
-.website{
-  background-color: rgb(179, 223, 223);
-} */
+
 .sentence{
     display: flex;
     justify-content: center;
@@ -104,7 +89,8 @@ z-index: -1; */
     flex-direction: column;
     position: relative;
     height: 300px;
-    width: 100%; 
+    width: 70%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the carousel horizontally */
     background-color: #6097b3;
     background-size: cover;
     background-position: center;
@@ -113,7 +99,7 @@ z-index: -1; */
     transition: box-shadow 0.3s ease;
     border-radius: 10px;
   }
-  
+      
   .carousel-container:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.664);
   }
